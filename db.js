@@ -32,7 +32,6 @@ const createNewAccount = ({ ac_id, ac_name, balance }, onCreate = undefined) => 
     })
 }
 
-
 const withdraw = () => {}
 
 const deposit = () => {}
