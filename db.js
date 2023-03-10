@@ -40,3 +40,5 @@ const deposit = () => {}
 const transfer = () => {}
 
 createNewAccount({ ac_id: 2, ac_name: 'pqr', balance: 0 })
+
+
