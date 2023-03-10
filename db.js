@@ -20,13 +20,12 @@ client.connect(err => {
     client.end()
 })  
 
-const createNewAccount = ({ ac_id, ac_name, balance }, onCreate = undefined) => {
-    client.query(`insert into account values ($1, $2, $3)`, [ac_id, ac_name, balance], (err, _res) => {
-         if (err) {
-            console.log(`\n ❌  Problem in creating your account`);
-        } else {
+const createNewAccount = ({ ac_id, ac_name, balance }) => {
+    client.query(`insert into account values ($1, $2, $3)`, [ac_id, ac_name, balance], (res, _err) => {
+         if (res) {
             console.log(`\n ✅  New account created successfully`)
-            if(onCreate) onCreate(`✅  New account created successfully`)
+        } else {
+            console.log(`\n ❌  Problem in creating your account`);
         }
         client.end()
     })
